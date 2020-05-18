@@ -1,0 +1,11 @@
+<h4>Withdraw Money</h4>
+Account Number: <%= @my_account.account_no %>
+<%= form_with scope: :withdraw, url: withdraw_path , method: :post do |f| %>
+	<table>
+		<tr>
+			<td><%= f.label :amount %>:</td>
+			<td><%= f.text_field :amount %></td>
+		</tr>
+	</table>
+	<%=f.submit 'Withdraw'%>
+	<% end %>

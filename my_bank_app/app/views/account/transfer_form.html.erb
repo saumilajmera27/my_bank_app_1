@@ -1,0 +1,13 @@
+<h4>Transfer Money</h4>
+Account Number: <%= @my_account.account_no %>
+<%= form_with scope: :transfer, url: transfer_path , method: :post do |f| %>
+	<table>
+		<tr>
+      <td><%= f.label :transfer_to %>:</td>
+      <td><%= f.text_field :account_to %>
+			<td><%= f.label :amount %>:</td>
+			<td><%= f.text_field :amount %></td>
+		</tr>
+	</table>
+	<%=f.submit 'Transfer'%>
+	<% end %>

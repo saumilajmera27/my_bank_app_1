@@ -1,0 +1,11 @@
+<h4>Deposit Money</h4>
+Account Number: <%= @my_account.account_no %>
+<%= form_with scope: :deposit, url: deposit_path , method: :post do |f| %>
+	<table>
+		<tr>
+			<td><%= f.label :amount %>:</td>
+			<td><%= f.text_field :amount %></td>
+		</tr>
+	</table>
+	<%=f.submit 'Deposit'%>
+	<% end %>

@@ -1,0 +1,36 @@
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+<h4>Welcome to My Bank-App</h4>
+<% if @my_account == nil %>
+  <%= link_to 'Open an Account', open_account_path %>
+<% else %>
+  <table border="1">
+    <tr>
+      <th>Account Number</th>
+      <th>Balance</th>
+      <th>Deposit</th>
+      <th>Withdraw</th>
+      <th>Transfer</th>
+      <th>Statements</th>
+    </tr>
+    <tr>
+      <td>
+        <%= @my_account.account_no %>
+      </td>
+      <td>
+        <%= @my_account.balance %>
+      </td>
+      <td>
+        <%= link_to 'Deposit', deposit_form_path %>
+      </td> 
+      <td>
+        <%= link_to 'Withdraw', withdraw_form_path %>
+      </td>
+      <td>
+        <%= link_to 'Transfer', transfer_form_path %>
+      </td>
+      <td>
+        <%= link_to 'Statements', transactions_path %>
+      </td> 
+    </tr>
+  </table>
+<% end %>

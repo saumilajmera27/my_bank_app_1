@@ -1,0 +1,29 @@
+<h4>Transactions</h4>
+Account Number :
+<%= @my_account.account_no %>
+<table border='1'>
+  <tr>
+    <th>
+      Transaction Type 
+    </th>
+    <th>
+      Amount
+    </th>
+    <th>
+      Date of Transaction
+    </th>
+  </tr>
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td>
+        <%= transaction.transaction_type %>
+      </td>
+      <td>
+        <%= transaction.amount %>
+      </td>
+      <td>
+        <%= transaction.created_at %>
+      </td>
+    </tr>
+  <% end %>
+</table>
